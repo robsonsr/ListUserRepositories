@@ -1,3 +1,20 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl" : "./",
+    "paths": {
+      "@components": ["./src/presentation/components/index"],
+      "@components/*": ["./src/presentation/components/*"],
+      "@infrastructure": ["./src/infrastructure/index"],
+      "@infrastructure/*": ["./src/infrastructure/*"],
+      "@data": ["./src/data/index"],
+      "@data/*": ["./src/data/*"],
+      "@domain": ["./src/domain/index"],
+      "@domain/*": ["./src/domain/*"],
+      "@modules": ["./src/presentation/modules/index"],
+      "@modules/*": ["./src/presentation/modules/*"],
+      "@images": ["./src/presentation/images/index"],
+      "@presentation/*": ["./src/presentation/*"],
+    },
+  }
 }
