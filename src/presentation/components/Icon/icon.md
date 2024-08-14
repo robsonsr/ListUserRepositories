@@ -1,0 +1,5 @@
+-   O arquivo svg no figma deve ter 20x20;
+-   Garanta que existe somente um path do icone, ou seja, que tudo unido.
+-   Usar o site https://react-svgr.com/playground/?memo=true&native=true para facilitar a conversão para React Native
+-   Deve ser definido o seguinte viewBox="0 0 20 20"
+-   Olhe algum outro icone de exemplo

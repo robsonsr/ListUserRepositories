@@ -63,9 +63,9 @@ const theme: DefaultTheme = {
 		full: windowHeight,
 	},
 	iconSize: {
-		small: 15,
-		medium: 20,
-		large: 35,
+		small: 16,
+		medium: 24,
+		large: 32,
 	},
 }
 
