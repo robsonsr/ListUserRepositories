@@ -39,6 +39,11 @@ const theme: DefaultTheme = {
 		success: palette.green,
 		warning: palette.goldenYellow,
 		danger: palette.reddishPink,
+
+		tabBarBackground: palette.white,
+		tabBarBackgroundActive: palette.turquoise,
+		tabBarIconActive: palette.white,
+		tabBarIconInactive: palette.lightGray,
 	},
 	spacing: {
 		sp0: 0,

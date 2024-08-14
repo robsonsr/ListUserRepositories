@@ -19,6 +19,11 @@ declare module 'styled-components/native' {
 			success: string
 			warning: string
 			danger: string
+
+			tabBarBackground: string
+			tabBarBackgroundActive: string
+			tabBarIconActive: string
+			tabBarIconInactive: string
 		}
 		spacing: {
 			sp0: number
