@@ -18,7 +18,6 @@ const useGetProfile = () => {
 			setRepositories([])
 			const { error, data } = await fetch({ variables: { login, after: '' } })
 
-			console.log({ error })
 			const profile = data?.user
 			const repositories = data?.user.repositories.edges
 			const newPageInfo = data?.user.repositories.pageInfo
