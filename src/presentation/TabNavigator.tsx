@@ -1,32 +1,18 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { BottomTabBar, Box, Typograph } from '@components'
+import { BottomTabBar } from '@components'
+import { ListRepositoriesScreen, FavoritesRespositoriesScreen } from './screens/'
 
 enum TabScreenNames {
-	ListRepositoriesScreen = 'ListRepositoriesScreen',
-	FavoritesRepositoriesScreen = 'FavoritesRepositoriesScreen',
+	ListRepositories = 'ListRepositories',
+	FavoritesRespositoriesScreen = 'FavoritesRespositoriesScreen',
 }
 
 type TabParamList = {
-	[TabScreenNames.ListRepositoriesScreen]?: undefined
-	[TabScreenNames.FavoritesRepositoriesScreen]?: undefined
-}
-
-const Screen1 = () => {
-	return (
-		<Box>
-			<Typograph>List</Typograph>
-		</Box>
-	)
-}
-
-const Screen2 = () => {
-	return (
-		<Box>
-			<Typograph>Favorites</Typograph>
-		</Box>
-	)
+	[TabScreenNames.ListRepositories]?: undefined
+	[TabScreenNames.FavoritesRespositoriesScreen]?: undefined
 }
 
 const Tab = createBottomTabNavigator<TabParamList>()
@@ -34,19 +20,13 @@ const Tab = createBottomTabNavigator<TabParamList>()
 const TabNavigator = () => {
 	return (
 		<Tab.Navigator
-			tabBar={BottomTabBar}
+			tabBar={(props) => <BottomTabBar {...props} />}
 			screenOptions={{
 				headerShown: false,
 			}}
 		>
-			<Tab.Screen
-				name={TabScreenNames.ListRepositoriesScreen}
-				component={Screen1}
-			/>
-			<Tab.Screen
-				name={TabScreenNames.FavoritesRepositoriesScreen}
-				component={Screen2}
-			/>
+			<Tab.Screen name={TabScreenNames.ListRepositories} component={ListRepositoriesScreen} />
+			<Tab.Screen name={TabScreenNames.FavoritesRespositoriesScreen} component={FavoritesRespositoriesScreen} />
 		</Tab.Navigator>
 	)
 }
