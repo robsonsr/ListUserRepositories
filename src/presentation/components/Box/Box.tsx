@@ -4,13 +4,7 @@ import styled from 'styled-components/native'
 
 import * as T from '../theme'
 
-interface BoxProps
-	extends ViewProps,
-		T.Space,
-		T.Flex,
-		T.Size,
-		T.BackgroundColors,
-		T.Border {}
+interface BoxProps extends ViewProps, T.Space, T.Flex, T.Size, T.BackgroundColors, T.Border, T.Shadow {}
 
 const Box = styled.View<BoxProps>`
 	${T.space}
@@ -18,6 +12,7 @@ const Box = styled.View<BoxProps>`
     ${T.size}
     ${T.backgroundColors}
     ${T.border}
+	${T.shadow}
 `
 
 export { Box }
