@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { memo, useMemo } from 'react'
 
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 
 import { Icon, IconProps, Pressable, Row } from '../'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
+const TAB_BAR_HEIGHT = 69
 
 interface ButtonOptions {
 	iconName: IconProps['name']
@@ -17,9 +20,13 @@ const buttonsOptions: ButtonOptions[] = [
 	},
 ]
 
-const BottomTabBar = ({ state, navigation }: BottomTabBarProps) => {
+const BottomTabBar = memo(({ state, navigation }: BottomTabBarProps) => {
+	const insets = useSafeAreaInsets()
+
+	const [height, paddingBottom] = useMemo(() => [TAB_BAR_HEIGHT + insets.bottom / 2, insets.bottom / 2], [insets.bottom])
+
 	return (
-		<Row bg="tabBarBackground" height={69}>
+		<Row bg="tabBarBackground" shadow="large" height={height}>
 			{state.routes.map((route, index) => {
 				const isFocused = state.index === index
 
@@ -38,31 +45,19 @@ const BottomTabBar = ({ state, navigation }: BottomTabBarProps) => {
 				return (
 					<Pressable
 						onPress={onPress}
-						key={`tab-bar-button-${
-							buttonsOptions[index].iconName
-						}-${index.toString()}`}
+						key={`tab-bar-button-${buttonsOptions[index].iconName}`}
 						flex={1}
 						justifyContent="center"
 						alignItems="center"
-						bg={
-							isFocused
-								? 'tabBarBackgroundActive'
-								: 'tabBarBackground'
-						}
+						bg={isFocused ? 'tabBarBackgroundActive' : 'tabBarBackground'}
+						pb={paddingBottom}
 					>
-						<Icon
-							name={buttonsOptions[index].iconName}
-							color={
-								isFocused
-									? 'tabBarIconActive'
-									: 'tabBarIconInactive'
-							}
-						/>
+						<Icon name={buttonsOptions[index].iconName} color={isFocused ? 'tabBarIconActive' : 'tabBarIconInactive'} />
 					</Pressable>
 				)
 			})}
 		</Row>
 	)
-}
+})
 
 export { BottomTabBar }
