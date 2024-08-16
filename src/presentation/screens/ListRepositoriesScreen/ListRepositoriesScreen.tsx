@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { FlatList, RefreshControl } from 'react-native'
 
-import { Container, InputSearch, Typograph } from '@components'
+import { Container, InputSearch, RepositoryCard, Typograph } from '@components'
 import { useGetProfile } from '@presentation/hooks/useGetProfile'
 import { useHandleFavorites } from '@presentation/hooks/useHandleFavorites'
 
-import { RepositoryCard } from '../../components'
 import { ProfileCard } from './components/ProfileCard'
 import { UserNotFoundState } from './components/UserNotFoundState'
 
