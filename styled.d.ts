@@ -8,12 +8,16 @@ declare module 'styled-components/native' {
 			darkPrimary: string
 
 			placeholder: string
+			inputText: string
+			inputIcon: string
+
 			neutral: string
 			darkNeutral: string
 
 			background: string
 			backgroundSecondary: string
 			border: string
+			borderActive: string
 			line: string
 
 			success: string
@@ -24,6 +28,14 @@ declare module 'styled-components/native' {
 			tabBarBackgroundActive: string
 			tabBarIconActive: string
 			tabBarIconInactive: string
+
+			iconActive: string
+			iconNeutral: string
+
+			blue: string
+			red: string
+			yellow: string
+			gray: string
 		}
 		spacing: {
 			sp0: number
@@ -51,6 +63,18 @@ declare module 'styled-components/native' {
 			small: number
 			medium: number
 			large: number
+		}
+		shadow: {
+			small: Shadow
+			medium: Shadow
+			large: Shadow
+		}
+		fonts: {
+			weight: {
+				regular: string
+				medium: string
+				SemiBold: string
+			}
 		}
 	}
 }
