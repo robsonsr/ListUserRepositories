@@ -2,10 +2,10 @@ import React, { memo } from 'react'
 
 import { DefaultTheme, useTheme } from 'styled-components/native'
 
+import { Branch } from './Branch'
+import { Heart, HeartOutline } from './Heart'
 import { Search } from './Search'
 import { StarOutline } from './Star'
-import { Heart, HeartOutline } from './Heart'
-import { Branch } from './Branch'
 import { User } from './User'
 
 const IconList = {

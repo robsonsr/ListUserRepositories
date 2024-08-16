@@ -1,10 +1,6 @@
 import React from 'react'
 import { useCallback, useState } from 'react'
-import {
-	NativeSyntheticEvent,
-	TextInputFocusEventData,
-	TextInputProps,
-} from 'react-native'
+import { NativeSyntheticEvent, TextInputFocusEventData, TextInputProps } from 'react-native'
 
 import { Box } from '../Box'
 import { Icon, IconProps } from '../Icon'
@@ -49,11 +45,7 @@ const Input = ({ label, iconRight, ...textInputProps }: InputProps) => {
 				borderWidth={1}
 				borderColor={isFocused ? 'borderActive' : 'border'}
 			>
-				<S.Input
-					{...textInputProps}
-					onBlur={onBlur}
-					onFocus={onFocus}
-				/>
+				<S.Input {...textInputProps} onBlur={onBlur} onFocus={onFocus} />
 
 				{iconRight && (
 					<Box ml="sp3">

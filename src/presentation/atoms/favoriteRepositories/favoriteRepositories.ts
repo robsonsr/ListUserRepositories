@@ -1,6 +1,7 @@
+import { AtomEffect, DefaultValue, atom } from 'recoil'
+
 import { Repository } from '@domain/models'
 import { storage } from '@infrastructure/storage/storage'
-import { atom, AtomEffect, DefaultValue } from 'recoil'
 
 type FavoriteRepositoriesState = Repository[]
 

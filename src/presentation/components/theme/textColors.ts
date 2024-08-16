@@ -1,4 +1,5 @@
 import { DefaultTheme, css } from 'styled-components/native'
+
 import { applyColor } from './utils'
 
 interface TextColors {

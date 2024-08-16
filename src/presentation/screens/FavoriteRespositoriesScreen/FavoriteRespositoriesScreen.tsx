@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, RepositoryCard, Typograph } from '@components'
 import { FlatList } from 'react-native'
 
+import { Container, RepositoryCard, Typograph } from '@components'
 import { useHandleFavorites } from '@presentation/hooks/useHandleFavorites'
 
 const FavoritesRespositoriesScreen = () => {

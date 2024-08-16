@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-shadow */
 import { CSSProperties } from 'react'
+
 import { css } from 'styled-components/native'
 
 interface Flex {

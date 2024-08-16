@@ -1,4 +1,5 @@
 import dateFNS from 'date-fns'
+
 import { DateUtil } from './dateUtil'
 
 const dateFNSAdapter: DateUtil = {

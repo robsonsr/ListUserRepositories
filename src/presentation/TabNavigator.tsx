@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react'
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { BottomTabBar } from '@components'
-import { ListRepositoriesScreen, FavoritesRespositoriesScreen } from './screens/'
+
+import { FavoritesRespositoriesScreen, ListRepositoriesScreen } from './screens/'
 
 enum TabScreenNames {
 	ListRepositories = 'ListRepositories',

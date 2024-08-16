@@ -8,4 +8,7 @@ module.exports = {
   tabWidth: 4,
   printWidth: 150,
   useTabs: true,
+  importOrder: ['^react', '^@react', '^react-native', '^[a-zA-Z]', '^@?\\w', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
 };

@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
-import { Card } from '@components/Card'
+
 import { Box, Icon, Row, Typograph } from '@components'
+import { Card } from '@components/Card'
 import { Repository } from '@domain/models'
 import { Patterns, dateUtil } from '@infrastructure/dateUtil'
 
@@ -13,7 +14,7 @@ interface RepositoryCardProps {
 const RepositoryCard = memo(({ respository, isFavorite, onPress }: RepositoryCardProps) => {
 	return (
 		<Card
-			mt="sp4"
+			mt="sp3"
 			onPress={() => {
 				onPress(respository)
 			}}

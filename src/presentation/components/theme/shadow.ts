@@ -1,4 +1,5 @@
 import { Platform } from 'react-native'
+
 import { DefaultTheme, css } from 'styled-components/native'
 
 interface Shadow {

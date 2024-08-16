@@ -1,4 +1,5 @@
 import { DefaultTheme, css } from 'styled-components/native'
+
 import { applyColor } from './utils'
 
 type Bg = keyof DefaultTheme['colors'] | string

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Box, MessageState, Typograph } from '@components'
 
 interface UserNotFoundStateProps {

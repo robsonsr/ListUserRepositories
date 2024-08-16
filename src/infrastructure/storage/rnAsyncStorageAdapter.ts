@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+
 import { Storage } from './storage'
 
 const setItem: Storage['setItem'] = async (key: string, item: any): Promise<void> => {

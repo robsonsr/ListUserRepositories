@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import Svg, { Path } from 'react-native-svg'
+
 import { BaseProps } from '../Icon'
 
 const HeartOutline = memo(({ size, color }: BaseProps) => {

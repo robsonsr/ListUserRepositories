@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Container, InputSearch, Typograph } from '@components'
-import { UserNotFoundState } from './components/UserNotFoundState'
-import { ProfileCard } from './components/ProfileCard'
-
-import { useGetProfile } from '@presentation/hooks/useGetProfile'
 import { FlatList, RefreshControl } from 'react-native'
-import { RepositoryCard } from '../../components'
 
+import { Container, InputSearch, Typograph } from '@components'
+import { useGetProfile } from '@presentation/hooks/useGetProfile'
 import { useHandleFavorites } from '@presentation/hooks/useHandleFavorites'
+
+import { RepositoryCard } from '../../components'
+import { ProfileCard } from './components/ProfileCard'
+import { UserNotFoundState } from './components/UserNotFoundState'
 
 const ListRepositoriesScreen = () => {
 	const [search, setSearch] = useState('')

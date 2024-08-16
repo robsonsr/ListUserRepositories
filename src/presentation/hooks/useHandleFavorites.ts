@@ -1,7 +1,9 @@
+import { useCallback } from 'react'
+
+import { useRecoilState } from 'recoil'
+
 import { Repository } from '@domain/models'
 import { favoriteRepositoriesState } from '@presentation/atoms/favoriteRepositories'
-import { useCallback } from 'react'
-import { useRecoilState } from 'recoil'
 
 const useHandleFavorites = () => {
 	const [favorites, setFavorites] = useRecoilState(favoriteRepositoriesState)

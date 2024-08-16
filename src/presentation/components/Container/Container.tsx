@@ -1,7 +1,7 @@
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { Box, BoxProps } from '../Box'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Container = (props: BoxProps) => {
 	return (

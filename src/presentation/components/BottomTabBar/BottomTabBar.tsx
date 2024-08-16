@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 
 import { Icon, IconProps, Pressable, Row } from '../'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 const TAB_BAR_HEIGHT = 69
 

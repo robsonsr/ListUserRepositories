@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Pressable, PressableProps } from '../Pressable'
 
 interface CardProps extends PressableProps {}

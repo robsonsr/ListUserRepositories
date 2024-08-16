@@ -9,6 +9,8 @@
       "@infrastructure/*": ["./src/infrastructure/*"],
       "@domain": ["./src/domain/index"],
       "@domain/*": ["./src/domain/*"],
+      "@graphql": ["./src/graphql/index"],
+      "@graphql/*": ["./src/graphql/*"],
       "@modules": ["./src/presentation/modules/index"],
       "@modules/*": ["./src/presentation/modules/*"],
       "@images": ["./src/presentation/images/index"],

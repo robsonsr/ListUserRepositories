@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+
 import { css } from 'styled-components/native'
 
 interface Text {

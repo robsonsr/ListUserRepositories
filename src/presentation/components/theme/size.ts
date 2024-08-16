@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+
 import { css } from 'styled-components/native'
 
 const applyProperty = ({ property, value }: { property: keyof CSSProperties; value?: number | string }) => {

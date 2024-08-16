@@ -1,5 +1,6 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client'
 import Config from 'react-native-config'
+
+import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 const apolloClient = new ApolloClient({
 	uri: Config.URL,

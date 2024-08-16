@@ -1,8 +1,9 @@
 import React, { memo } from 'react'
-import { Card } from '@components/Card'
-import { Box, Column, Row, Typograph } from '@components'
-import { Profile } from '@domain/models'
 import { Image } from 'react-native'
+
+import { Box, Column, Row, Typograph } from '@components'
+import { Card } from '@components/Card'
+import { Profile } from '@domain/models'
 
 interface ProfileCardProps {
 	profile: Profile
