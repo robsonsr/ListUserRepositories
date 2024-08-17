@@ -31,7 +31,7 @@ const ProfileCard = memo(({ profile }: ProfileCardProps) => {
 				</Column>
 			</Row>
 
-			<Divider mv="sp2" />
+			<Divider mv="sp3" />
 
 			<Typograph variant="paragraphyMdRegular" mt="sp2">
 				{profile.bio ? profile.bio : 'Sem descrição'}

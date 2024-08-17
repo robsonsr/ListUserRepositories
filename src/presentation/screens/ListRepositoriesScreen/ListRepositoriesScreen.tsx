@@ -60,7 +60,7 @@ const ListRepositoriesScreen = () => {
 					<Box>
 						<Typograph variant="heading1SemiBold">Procure pelo Nome ou Nome de Usuário</Typograph>
 
-						<Typograph variant="heading5Regular" mt="sp3">
+						<Typograph variant="heading5Regular" mv="sp3">
 							Encontre os repositórios de algum usuário digitando no campo abaixo
 						</Typograph>
 

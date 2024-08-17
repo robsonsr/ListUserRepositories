@@ -46,7 +46,7 @@ const RepositoryCard = memo(({ respository, isFavorite, onPress, ...props }: Rep
 				{respository?.description ? respository.description : 'N/A'}
 			</Typograph>
 
-			<Row alignItems="center">
+			<Row alignItems="center" m="sp2">
 				{respository.primaryLanguage?.name && (
 					<>
 						<Box height={16} width={16} bg={respository.primaryLanguage?.color} radius="full" />
