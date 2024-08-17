@@ -28,7 +28,7 @@ const mocksFetchMore: MockedResponse = {
 }
 
 const setup = () => {
-	renderWithTheme(<ListRepositoriesScreen />, [mockFirstResponse, mocksFetchMore])
+	renderWithTheme(<ListRepositoriesScreen />, { mocks: [mockFirstResponse, mocksFetchMore] })
 }
 
 describe('ListRepositoriesScreen', () => {
