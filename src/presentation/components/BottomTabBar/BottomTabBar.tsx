@@ -23,7 +23,10 @@ const buttonsOptions: ButtonOptions[] = [
 const BottomTabBar = memo(({ state, navigation }: BottomTabBarProps) => {
 	const insets = useSafeAreaInsets()
 
-	const [height, paddingBottom] = useMemo(() => [TAB_BAR_HEIGHT + insets.bottom / 2, insets.bottom / 2], [insets.bottom])
+	const [height, paddingBottom] = useMemo(
+		() => [TAB_BAR_HEIGHT + insets.bottom / 2, insets.bottom / 2],
+		[insets.bottom],
+	)
 
 	return (
 		<Row bg="tabBarBackground" shadow="large" height={height}>
@@ -52,7 +55,10 @@ const BottomTabBar = memo(({ state, navigation }: BottomTabBarProps) => {
 						bg={isFocused ? 'tabBarBackgroundActive' : 'tabBarBackground'}
 						pb={paddingBottom}
 					>
-						<Icon name={buttonsOptions[index].iconName} color={isFocused ? 'tabBarIconActive' : 'tabBarIconInactive'} />
+						<Icon
+							name={buttonsOptions[index].iconName}
+							color={isFocused ? 'tabBarIconActive' : 'tabBarIconInactive'}
+						/>
 					</Pressable>
 				)
 			})}
