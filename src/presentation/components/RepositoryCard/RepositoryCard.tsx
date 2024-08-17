@@ -6,24 +6,24 @@ import { Repository } from '@domain/models'
 import { Patterns, dateUtil } from '@infrastructure/dateUtil'
 
 interface RepositoryCardProps extends Omit<CardProps, 'onPress'> {
-	respository: Repository
+	repository: Repository
 	isFavorite: boolean
 	onPress: (repository: Repository) => void
 }
 
-const RepositoryCard = memo(({ respository, isFavorite, onPress, ...props }: RepositoryCardProps) => {
+const RepositoryCard = memo(({ repository, isFavorite, onPress, ...props }: RepositoryCardProps) => {
 	return (
 		<Card
 			mt="sp3"
 			onPress={() => {
-				onPress(respository)
+				onPress(repository)
 			}}
 			{...props}
 		>
 			<Row justifyContent="space-between">
 				<Box flex={1} mr="sp3">
 					<Typograph numberOfLines={1} variant="heading2SemiBold">
-						{respository.name}
+						{repository.name}
 					</Typograph>
 				</Box>
 
@@ -36,29 +36,29 @@ const RepositoryCard = memo(({ respository, isFavorite, onPress, ...props }: Rep
 					justifyContent="center"
 					borderColor={isFavorite ? 'primary' : 'backgroundSecondary'}
 					bg={isFavorite ? 'background' : 'backgroundSecondary'}
-					testID={`icon-${respository.name}`}
+					testID={`icon-${repository.name}`}
 				>
 					<Icon name="heart" size="small" color={isFavorite ? 'iconActive' : 'iconNeutral'} />
 				</Box>
 			</Row>
 
 			<Typograph variant="paragraphyMdRegular" mt="sp2">
-				{respository?.description ? respository.description : 'N/A'}
+				{repository?.description ? repository.description : 'N/A'}
 			</Typograph>
 
 			<Row alignItems="center" mt="sp3">
-				{respository.primaryLanguage?.name && (
+				{repository.primaryLanguage?.name && (
 					<>
-						<Box height={16} width={16} bg={respository.primaryLanguage?.color} radius="full" />
+						<Box height={16} width={16} bg={repository.primaryLanguage?.color} radius="full" />
 
 						<Typograph variant="paragraphyMdRegular" ml="sp2">
-							{respository.primaryLanguage?.name}
+							{repository.primaryLanguage?.name}
 						</Typograph>
 					</>
 				)}
 			</Row>
-			{respository?.updatedAt && (
-				<Typograph mt="sp2">Updated on {dateUtil.format(respository.updatedAt, Patterns.dMMMyyyy)}</Typograph>
+			{repository?.updatedAt && (
+				<Typograph mt="sp2">Updated on {dateUtil.format(repository.updatedAt, Patterns.dMMMyyyy)}</Typograph>
 			)}
 		</Card>
 	)
