@@ -19,6 +19,10 @@ interface TypographProps extends TextProps, T.Space, T.TextColors, T.Text {
 	variant?: Variants
 }
 
+const calculateLineHeight = (fontSize: number, ratio: number = 1.4): string => {
+	return `${Math.round(fontSize * ratio)}px`
+}
+
 const Typograph = styled.Text<TypographProps>`
 	${T.space}
 	${T.textColors}
@@ -27,6 +31,7 @@ const Typograph = styled.Text<TypographProps>`
 		const paragraphyMdRegular = {
 			fontFamily: theme.fonts.weight.regular,
 			fontSize: 14,
+			lineHeight: calculateLineHeight(14),
 			color: color ? theme.colors[color] : theme.colors.darkNeutral,
 		}
 
@@ -34,6 +39,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.SemiBold,
 				fontSize: 21,
+				lineHeight: calculateLineHeight(21),
 				color: color ? theme.colors[color] : theme.colors.neutral,
 			}
 
@@ -41,6 +47,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.SemiBold,
 				fontSize: 18,
+				lineHeight: calculateLineHeight(18),
 				color: color ? theme.colors[color] : theme.colors.neutral,
 			}
 
@@ -48,6 +55,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.medium,
 				fontSize: 18,
+				lineHeight: calculateLineHeight(18),
 				color: color ? theme.colors[color] : theme.colors.neutral,
 			}
 
@@ -55,6 +63,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.SemiBold,
 				fontSize: 16,
+				lineHeight: calculateLineHeight(16),
 				color: color ? theme.colors[color] : theme.colors.neutral,
 			}
 
@@ -62,6 +71,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.regular,
 				fontSize: 16,
+				lineHeight: calculateLineHeight(16),
 				color: color ? theme.colors[color] : theme.colors.neutral,
 			}
 
@@ -71,6 +81,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.medium,
 				fontSize: 14,
+				lineHeight: calculateLineHeight(14),
 				color: color ? theme.colors[color] : theme.colors.darkNeutral,
 			}
 
@@ -78,6 +89,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.regular,
 				fontSize: 12,
+				lineHeight: calculateLineHeight(12),
 				color: color ? theme.colors[color] : theme.colors.placeholder,
 			}
 
@@ -85,6 +97,7 @@ const Typograph = styled.Text<TypographProps>`
 			return {
 				fontFamily: theme.fonts.weight.medium,
 				fontSize: 12,
+				lineHeight: calculateLineHeight(12),
 				color: color ? theme.colors[color] : theme.colors.darkNeutral,
 			}
 

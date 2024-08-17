@@ -21,7 +21,7 @@ const RepositoryCard = memo(({ respository, isFavorite, onPress, ...props }: Rep
 			{...props}
 		>
 			<Row justifyContent="space-between">
-				<Box flex={1}>
+				<Box flex={1} mr="sp3">
 					<Typograph numberOfLines={1} variant="heading2SemiBold">
 						{respository.name}
 					</Typograph>
@@ -46,18 +46,19 @@ const RepositoryCard = memo(({ respository, isFavorite, onPress, ...props }: Rep
 				{respository?.description ? respository.description : 'N/A'}
 			</Typograph>
 
-			<Row alignItems="center" m="sp2">
+			<Row alignItems="center" mt="sp3">
 				{respository.primaryLanguage?.name && (
 					<>
 						<Box height={16} width={16} bg={respository.primaryLanguage?.color} radius="full" />
-						<Typograph variant="paragraphyMdRegular" mt="sp2" ml="sp2">
+
+						<Typograph variant="paragraphyMdRegular" ml="sp2">
 							{respository.primaryLanguage?.name}
 						</Typograph>
 					</>
 				)}
 			</Row>
 			{respository?.updatedAt && (
-				<Typograph>Updated on {dateUtil.format(respository.updatedAt, Patterns.dMMMyyyy)}</Typograph>
+				<Typograph mt="sp2">Updated on {dateUtil.format(respository.updatedAt, Patterns.dMMMyyyy)}</Typograph>
 			)}
 		</Card>
 	)

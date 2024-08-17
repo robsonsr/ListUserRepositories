@@ -28,7 +28,6 @@ const FavoriteRepositoriesScreen = () => {
 					)
 				}}
 				keyExtractor={({ id }) => id}
-				showsVerticalScrollIndicator={false}
 			/>
 		</Container>
 	)
