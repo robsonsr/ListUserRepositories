@@ -8,12 +8,13 @@ import { favoriteRepositoriesState } from '@presentation/atoms/favoriteRepositor
 const useHandleFavorites = () => {
 	const [favorites, setFavorites] = useRecoilState(favoriteRepositoriesState)
 
-	const handleFavorites = useCallback(
+	const toggleFavorites = useCallback(
 		(repository: Repository) => {
 			setFavorites((prev) => {
 				const alreadyFavorited = prev.some((item) => item.id === repository.id)
+
 				if (alreadyFavorited) return [...prev.filter((item) => item.id !== repository.id)]
-				return [...prev, repository]
+				return [repository, ...prev]
 			})
 		},
 		[setFavorites],
@@ -21,7 +22,7 @@ const useHandleFavorites = () => {
 
 	return {
 		favorites,
-		handleFavorites,
+		toggleFavorites,
 	}
 }
 
