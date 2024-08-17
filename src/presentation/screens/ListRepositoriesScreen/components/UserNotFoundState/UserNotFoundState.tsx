@@ -12,7 +12,10 @@ const UserNotFoundState = ({ login }: UserNotFoundStateProps) => {
 			<Typograph mt="sp2" variant="heading4SemiBold" color="primary">
 				"{login}"
 			</Typograph>
-			<MessageState title="Nenhum usuário encontrado" description="Verifique se a escrita está correta ou tente novamente" />
+			<MessageState
+				title="Nenhum usuário encontrado"
+				description="Verifique se a escrita está correta ou tente novamente"
+			/>
 		</Box>
 	)
 }

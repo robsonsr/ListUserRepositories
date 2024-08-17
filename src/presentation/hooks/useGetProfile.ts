@@ -10,7 +10,9 @@ const useGetProfile = () => {
 	const [isLoadingMore, setIsLoadingMore] = useState(false)
 	const [pageInfo, setPageInfo] = useState<PageInfo>()
 
-	const [fetch, { loading: isInitialLoading, error, fetchMore }] = useLazyQuery<GetProfileResponse, Variables>(GET_PROFILE)
+	const [fetch, { loading: isInitialLoading, error, fetchMore }] = useLazyQuery<GetProfileResponse, Variables>(
+		GET_PROFILE,
+	)
 
 	const getRepositories = useCallback(
 		async (login: string) => {
@@ -42,29 +44,34 @@ const useGetProfile = () => {
 		async (login: string) => {
 			setIsLoadingMore(true)
 
-			if (pageInfo?.hasNextPage) {
-				const { data } = await fetchMore({ variables: { login, after: pageInfo?.endCursor } })
-				const repositories = data?.user.repositories.edges
-				const newPageInfo = data?.user.repositories.pageInfo
+			const { data, error } = await fetchMore({ variables: { login, after: pageInfo?.endCursor } })
+			const repositories = data?.user.repositories.edges
+			const newPageInfo = data?.user.repositories.pageInfo
 
-				const newRepositories = repositories.map(({ node }) => node)
-				setRepositories((prev) => [...prev, ...newRepositories])
+			const newRepositories = repositories.map(({ node }) => node)
 
-				setPageInfo(newPageInfo)
-			}
+			setRepositories((prev) => [...prev, ...newRepositories])
+			setPageInfo(newPageInfo)
+
 			setIsLoadingMore(false)
+
+			return {
+				profile: data?.user,
+				error,
+			}
 		},
 		[fetchMore, pageInfo],
 	)
 
 	return {
+		getRepositories,
+		getMoreRepositories,
 		isLoading: isInitialLoading || isLoadingMore,
 		isInitialLoading,
 		isLoadingMore,
-		getRepositories,
-		getMoreRepositories,
 		profile,
 		repositories,
+		hasNextPage: pageInfo?.hasNextPage,
 		error,
 	}
 }
