@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 
 import { useLazyQuery } from '@apollo/client'
 import { Profile, Repository } from '@domain/models'
-import { GET_PROFILE, GetProfileResponse, PageInfo, Variables } from '@graphql/queries'
+import { GET_PROFILE, GetProfileResponse, PageInfo, Variables } from '@queries'
 
 const useGetProfile = () => {
 	const [profile, setProfile] = useState<Profile>()
@@ -19,7 +19,7 @@ const useGetProfile = () => {
 			setProfile(undefined)
 			setRepositories([])
 
-			const { error, data } = await fetch({ variables: { login, after: '' } })
+			const { data, error } = await fetch({ variables: { login, after: '' } })
 
 			const profile = data?.user
 			const repositories = data?.user.repositories.edges

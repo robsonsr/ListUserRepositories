@@ -13,8 +13,8 @@ import { TabNavigator } from '@presentation/TabNavigator'
 
 function App(): React.JSX.Element {
 	return (
-		<RecoilRoot>
-			<ApolloProvider client={apolloClient}>
+		<ApolloProvider client={apolloClient}>
+			<RecoilRoot>
 				<SafeAreaProvider>
 					<ThemeProvider theme={theme}>
 						<Suspense fallback={<FullLoading />}>
@@ -24,8 +24,8 @@ function App(): React.JSX.Element {
 						</Suspense>
 					</ThemeProvider>
 				</SafeAreaProvider>
-			</ApolloProvider>
-		</RecoilRoot>
+			</RecoilRoot>
+		</ApolloProvider>
 	)
 }
 

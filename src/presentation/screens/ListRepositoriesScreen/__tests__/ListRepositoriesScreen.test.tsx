@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { MockedResponse } from '@apollo/client/testing'
-import { GET_PROFILE } from '@graphql'
 import { fireEvent, renderWithTheme, screen, waitFor } from '@infrastructure/testUtils'
+import { GET_PROFILE } from '@queries'
 
 import { ListRepositoriesScreen } from '../'
 import { firstResponse, secondResponse } from '../__fixtures__/user'
