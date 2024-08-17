@@ -20,22 +20,24 @@ const IconList = {
 interface BaseProps {
 	size?: number
 	color?: string
+	testID?: string
 }
 
 interface IconProps {
 	name: keyof typeof IconList
 	size?: keyof DefaultTheme['iconSize']
 	color?: keyof DefaultTheme['colors']
+	testID?: string
 }
 
-const Icon = memo(({ name, size = 'medium', color = 'primary' }: IconProps) => {
+const Icon = memo(({ name, size = 'medium', color = 'primary', testID }: IconProps) => {
 	const { colors, iconSize } = useTheme()
 
 	const IconFounded = IconList[name]
 
 	if (!IconFounded) throw 'Invalid icon name'
 
-	return <IconFounded color={colors[color]} size={iconSize[size]} />
+	return <IconFounded color={colors[color]} size={iconSize[size]} testID={testID} />
 })
 
 export { Icon }

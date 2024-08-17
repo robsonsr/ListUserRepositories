@@ -1,1 +1,1 @@
-export * from './ListRepositoriesScreen'
+export { ListRepositoriesScreen } from './ListRepositoriesScreen'

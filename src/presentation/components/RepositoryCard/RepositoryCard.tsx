@@ -35,6 +35,7 @@ const RepositoryCard = memo(({ respository, isFavorite, onPress }: RepositoryCar
 					justifyContent="center"
 					borderColor={isFavorite ? 'primary' : 'backgroundSecondary'}
 					bg={isFavorite ? 'background' : 'backgroundSecondary'}
+					testID={`icon-${respository.name}`}
 				>
 					<Icon name="heart" size="small" color={isFavorite ? 'iconActive' : 'iconNeutral'} />
 				</Box>

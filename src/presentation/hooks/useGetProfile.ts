@@ -16,6 +16,7 @@ const useGetProfile = () => {
 		async (login: string) => {
 			setProfile(undefined)
 			setRepositories([])
+
 			const { error, data } = await fetch({ variables: { login, after: '' } })
 
 			const profile = data?.user

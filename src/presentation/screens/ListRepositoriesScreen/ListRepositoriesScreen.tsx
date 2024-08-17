@@ -41,6 +41,7 @@ const ListRepositoriesScreen = () => {
 	return (
 		<Container p="sp4" bg="primary" flex={1}>
 			<FlatList
+				testID="repository-list"
 				refreshControl={<RefreshControl refreshing={isInitialLoading || isLoadingMore} />}
 				ListHeaderComponent={
 					<>
