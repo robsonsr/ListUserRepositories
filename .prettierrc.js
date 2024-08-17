@@ -6,7 +6,7 @@ module.exports = {
   trailingComma: 'all',
   semi: false,
   tabWidth: 4,
-  printWidth: 150,
+  printWidth: 120,
   useTabs: true,
   importOrder: ['^react', '^@react', '^react-native', '^[a-zA-Z]', '^@?\\w', '^[./]'],
   importOrderSeparation: true,

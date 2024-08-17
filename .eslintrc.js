@@ -1,8 +1,14 @@
 module.exports = {
 	root: true,
 	extends: ['@react-native', 'prettier'],
+	plugins: ['prettier'],
 	rules: {
-		// Note: you must disable the base rule as it can report incorrect errors
+		'prettier/prettier': [
+			'error',
+			{
+				printWidth: 120,
+			},
+		],
 		'no-shadow': 'off',
 		'@typescript-eslint/no-shadow': 'off',
 		'max-len': 'off',
