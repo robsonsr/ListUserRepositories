@@ -12,13 +12,11 @@ URL=https://api.github.com/graphql
 ACCESS_TOKEN=
 ```
 
-## Rodar o projeto
-
-### Instale as dependências
+## Instale as dependências
 
 `yarn`
 
-### Android
+## Execução
 
 `yarn android`
 
