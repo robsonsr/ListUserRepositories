@@ -18,6 +18,8 @@ ACCESS_TOKEN=
 
 ## Execução
 
+### Android
+
 `yarn android`
 
 ### iOS
@@ -28,3 +30,6 @@ ACCESS_TOKEN=
 ## Rodar o testes
 
 `yarn test`
+
+### GIF
+![ScreenRecording2024-08-17at16 00 06-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a211f93f-8842-4ea2-88a9-a9bee4798bf5)
