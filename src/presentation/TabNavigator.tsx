@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { BottomTabBar } from '@components'
 
-import { FavoritesRespositoriesScreen, ListRepositoriesScreen } from './screens/'
+import { FavoriteRepositoriesScreen, ListRepositoriesScreen } from './screens/'
 
 enum TabScreenNames {
 	ListRepositories = 'ListRepositories',
@@ -28,7 +28,7 @@ const TabNavigator = () => {
 			}}
 		>
 			<Tab.Screen name={TabScreenNames.ListRepositories} component={ListRepositoriesScreen} />
-			<Tab.Screen name={TabScreenNames.FavoritesRespositoriesScreen} component={FavoritesRespositoriesScreen} />
+			<Tab.Screen name={TabScreenNames.FavoritesRespositoriesScreen} component={FavoriteRepositoriesScreen} />
 		</Tab.Navigator>
 	)
 }

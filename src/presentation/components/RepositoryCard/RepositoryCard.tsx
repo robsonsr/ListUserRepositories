@@ -1,23 +1,24 @@
 import React, { memo } from 'react'
 
 import { Box, Icon, Row, Typograph } from '@components'
-import { Card } from '@components/Card'
+import { Card, CardProps } from '@components/Card'
 import { Repository } from '@domain/models'
 import { Patterns, dateUtil } from '@infrastructure/dateUtil'
 
-interface RepositoryCardProps {
+interface RepositoryCardProps extends Omit<CardProps, 'onPress'> {
 	respository: Repository
 	isFavorite: boolean
 	onPress: (repository: Repository) => void
 }
 
-const RepositoryCard = memo(({ respository, isFavorite, onPress }: RepositoryCardProps) => {
+const RepositoryCard = memo(({ respository, isFavorite, onPress, ...props }: RepositoryCardProps) => {
 	return (
 		<Card
 			mt="sp3"
 			onPress={() => {
 				onPress(respository)
 			}}
+			{...props}
 		>
 			<Row justifyContent="space-between">
 				<Box flex={1}>
@@ -55,7 +56,9 @@ const RepositoryCard = memo(({ respository, isFavorite, onPress }: RepositoryCar
 					</>
 				)}
 			</Row>
-			{respository?.updatedAt && <Typograph>Updated on {dateUtil.format(respository.updatedAt, Patterns.dMMMyyyy)}</Typograph>}
+			{respository?.updatedAt && (
+				<Typograph>Updated on {dateUtil.format(respository.updatedAt, Patterns.dMMMyyyy)}</Typograph>
+			)}
 		</Card>
 	)
 })

@@ -1,1 +1,1 @@
-export * from './FavoriteRespositoriesScreen'
+export * from './FavoriteRepositoriesScreen'
