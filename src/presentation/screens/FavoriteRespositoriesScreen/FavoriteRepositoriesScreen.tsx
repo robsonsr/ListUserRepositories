@@ -21,7 +21,7 @@ const FavoriteRepositoriesScreen = () => {
 					return (
 						<RepositoryCard
 							testID="repository-card"
-							respository={item}
+							repository={item}
 							onPress={toggleFavorites}
 							isFavorite={favorites.includes(item)}
 						/>

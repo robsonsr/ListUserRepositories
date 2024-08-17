@@ -39,7 +39,7 @@ const ListRepositoriesScreen = () => {
 	const renderItem: ListRenderItem<Repository> = useCallback(
 		({ item }) => {
 			const isFavorite = favorites.some((favorited) => item.id === favorited.id)
-			return <RepositoryCard respository={item} onPress={toggleFavorites} isFavorite={isFavorite} />
+			return <RepositoryCard repository={item} onPress={toggleFavorites} isFavorite={isFavorite} />
 		},
 		[favorites, toggleFavorites],
 	)
